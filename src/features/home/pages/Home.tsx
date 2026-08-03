@@ -3,6 +3,8 @@ import banner from "../../../assets/banner-image.png";
 import {
   brandIcon,
   iamge,
+  iamge2,
+  iamge3,
   fruits,
   popular,
   deliveryBackGround,
@@ -10,8 +12,16 @@ import {
   Repeat,
   Shipping,
   Packaged,
+  ctaBack,
+  logo,
+  LeftArrow,
+  instagram,
+  facebook,
+  linkdin,
+  twiter,
 } from "../../../images";
 import { useState } from "react";
+import { Link } from "react-router";
 const Home = () => {
   const [email, setEmail] = useState(null);
   const [zipCode, setZipCode] = useState(null);
@@ -324,11 +334,231 @@ const Home = () => {
             Ipsum has been the industry's standard dummy text ever.
           </p>
         </div>
-        .
+        <div className="explore_category_">
+          <div className="category_top">
+            <div className="top_category_left_container">
+              <img src={iamge3} alt="" />
+            </div>
+            <div className="top_category_right_container">
+              <div className="right_img_container_1">
+                <img src={popular} alt="" />
+              </div>
+              <div className="right_img_container_2">
+                <img src={iamge2} alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="category_bottom">
+            <div className="category_bottom_left_container">
+              <div className="left_img_container_1">
+                <img src={fruits} alt="" />
+              </div>
+              <div className="left_img_container_2">
+                <img src={fruits} alt="" />
+              </div>
+            </div>
+            <div className="category_bottom_right_container">
+              <img src={iamge} alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="exp_cat_btn">
+          <button className="btn_explore_cat">Explore More Categories</button>
+        </div>
       </div>
-      <div className="home_instagram_feed"></div>
-      <div className="home_discover_container"></div>
-      <footer className="home_footer"></footer>
+      <div className="home_instagram_feed">
+        <div className="texts_container">
+          <div className="titel">
+            <div className="logo">
+              <img src={brandIcon} alt="" />
+            </div>
+            <h1>Explore Categories</h1>
+          </div>
+          <p className="subtitle">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's.
+          </p>
+        </div>
+        <div className="insagram_feed_carts">
+          <div className="cart">
+            <img src={iamge2} alt="" />
+          </div>
+          <div className="cart">
+            <img src={iamge2} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="home_discover_container">
+        <img src={ctaBack} alt="" />
+        <div className="dis_text_con">
+          <h5>Discover the Tazzartc</h5>
+          <h1>Tazza RTC</h1>
+          <h2>
+            Daily essentials, delivered to <br />
+            your doorstep.
+          </h2>
+          <div className="dis_text_con_btns">
+            <button className="shop_btn dis_btn">Shop Now</button>
+            <button className="discover_btn dis_btn">Discover</button>
+          </div>
+        </div>
+      </div>
+      <footer className="home_footer">
+        <div className="footer_content">
+          <div className="footer_left">
+            <img src={logo} alt="" />
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever...
+            </p>
+          </div>
+          <div className="footer_links_container">
+            <div className="quick_links">
+              <div className="footer_links_title">
+                <h1>Quick Link</h1>
+                <div className="linke_" />
+              </div>
+              <div className="footer_links">
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Today's Specials
+                  </Link>
+                </div>
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Chicken
+                  </Link>
+                </div>
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Fish
+                  </Link>
+                </div>
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Mutton
+                  </Link>
+                </div>
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Ready to Cook
+                  </Link>
+                </div>
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Fruits & Vegetables{" "}
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="our_products">
+              <div className="footer_links_title">
+                <h1>Our Product</h1>
+                <div className="linke_" />
+              </div>
+              <div className="footer_links">
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Chicken Curry Cut Small
+                  </Link>
+                </div>
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Lean Goat Curry Cut
+                  </Link>
+                </div>
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Chicken Drumstick
+                  </Link>
+                </div>
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Fresh chopped vegetables
+                  </Link>
+                </div>
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Fresh-Fish-slices
+                  </Link>
+                </div>
+                <div className="footer_link">
+                  <img src={LeftArrow} alt="" className="laft_arrow" />
+                  <Link to={""} className="link">
+                    Assorted-Spices-eggs
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="social_support_links">
+              <div className="social_links">
+                <div className="footer_links_title">
+                  <h1>Quick Link</h1>
+                  <div className="linke_" />
+                </div>
+                <div className="footer_links">
+                  <div className="footer_link">
+                    <Link to={""} className="link">
+                      <img src={facebook} alt="" />
+                    </Link>
+                    <Link to={""} className="link">
+                      <img src={instagram} alt="" />
+                    </Link>
+                    <Link to={""} className="link">
+                      <img src={twiter} alt="" />
+                    </Link>
+                    <Link to={""} className="link">
+                      <img src={linkdin} alt="" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              {/*  */}
+              <div className="support_links">
+                <div className="footer_links_title">
+                  <h1>Support</h1>
+                  <div className="linke_" />
+                </div>
+                <div className="footer_links">
+                  <div className="footer_link">
+                    <img src={LeftArrow} alt="" className="laft_arrow" />
+                    <Link to={""} className="link">
+                      Free Shipping
+                    </Link>
+                  </div>
+                  <div className="footer_link">
+                    <img src={LeftArrow} alt="" className="laft_arrow" />
+                    <Link to={""} className="link">
+                      Packaged fresh
+                    </Link>
+                  </div>
+                  <div className="footer_link">
+                    <img src={LeftArrow} alt="" className="laft_arrow" />
+                    <Link to={""} className="link">
+                      Give Us a Call
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="footer_copyright">
+          <p>Copyright© 2021 tazzartc.com All Right Reserved</p>
+        </div>
+      </footer>
     </section>
   );
 };

@@ -1,9 +1,9 @@
-import Home from "../features/home/pages/Home";
+import { Router } from "../routes/Router";
 
 const AppLayout = () => {
   return (
     <>
-      <Home />
+      <Router />
     </>
   );
 };
