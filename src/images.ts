@@ -18,6 +18,8 @@ import facebook from "../src/assets/social_icons/facebook.svg";
 import linkdin from "../src/assets/social_icons/linkdin.svg";
 import twiter from "../src/assets/social_icons/twiter.svg";
 
+import productHero from "../src/assets/product/product_hero.svg";
+
 export {
   brandIcon,
   iamge,
@@ -37,4 +39,5 @@ export {
   facebook,
   linkdin,
   twiter,
+  productHero,
 };
