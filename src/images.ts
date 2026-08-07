@@ -19,8 +19,25 @@ import linkdin from "../src/assets/social_icons/linkdin.svg";
 import twiter from "../src/assets/social_icons/twiter.svg";
 
 import productHero from "../src/assets/product/product_hero.svg";
+import productDetilsImg from "../src/assets/product_detils/product-details.png";
+import star from "../src/assets/product_detils/star.png";
+import addToCart from "../src/assets/product_detils/add-to-cart.svg";
+import message from "../src/assets/product_detils/message.svg";
+import search from "../src/assets/search.svg";
+
+import like from "../src/assets/like-icon.svg";
+import disLike from "../src/assets/dislike-icon.svg";
+import dowArrow from "../src/assets/down-arrow.svg";
 
 export {
+  dowArrow,
+  like,
+  disLike,
+  search,
+  message,
+  addToCart,
+  productDetilsImg,
+  star,
   brandIcon,
   iamge,
   iamge2,
