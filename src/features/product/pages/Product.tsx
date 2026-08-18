@@ -1,21 +1,10 @@
-import {
-  brandIcon,
-  ctaBack,
-  deliveryBackGround,
-  fruits,
-  LeftArrow,
-  logo,
-  Meals,
-  Packaged,
-  productHero,
-  Repeat,
-  Shipping,
-} from "../../../images";
+import { brandIcon, productHero } from "../../../images";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductCart from "../components/ProductCart";
-import InstagramFeed from "../components/InstagramFeed";
-import Footer from "../components/Footer";
+import InstagramFeed from "../../../utils/InstagramFeed";
+import Footer from "../../../utils/Footer";
+import DeliveryStep from "../../../utils/DeliveryStep";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -35,40 +24,45 @@ const Product = () => {
   }, []);
 
   return (
-    <section className="w-full  bg-soft">
-      <div className="relative w-full  aspect-19/5  ">
+    <section className="w-full bg-soft">
+      <div className="relative w-full  lg:aspect-1920/506 ">
         <img
           src={productHero}
           alt=""
-          className="w-full object-center object-cover "
+          className="w-full aspect-400/230 sm:aspect-640/250 lg:aspect-1920/506 object-center object-cover "
         />
+        {/*  */}
         <div
-          className="absolute w-full h-full top-0 left-0 flex flex-col justify-center px-pad-154 gap-12
+          className="absolute w-full h-full top-0 left-0 flex flex-col justify-center px-2 2xl:px-pad-154 gap-2 2xl:gap-12
         "
         >
-          <h1 className={`text-68 font-n-eb text-white-text leading-15  `}>
+          <h1
+            className={`text-30 md:text-42 xl:text-68 font-n-eb text-white-text 2xl:leading-15  `}
+          >
             Our Best <span className="text-highlight-text">Product</span> .
           </h1>
-          <p className="text-white-text  ">
+          <p className="text-white-text lg:text-22 xl:text-28 ">
             Lorem Ipsum is simply dummy text of the printing <br /> and
             typesetting industry.
           </p>
-          <button className="w-63.25 h-19 bg-yellow text-main text-24 text-center rounded-[50px] active:scale-[99%] ">
+          <button className="w-fit px-6 py-2 2xl:w-63.25 xl:aspect-253/76 bg-yellow text-main text-18 2xl:text-24 text-center rounded-[50px] active:scale-[99%] ">
             Shop Now
           </button>
         </div>
       </div>
-      <div className="px-pad-154 py-4 bg-soft ">
+      {/*  */}
+      <div className="2xl:px-pad-154 py-4 px-2 bg-base ">
         <h4 className="text-20 ">
           Home / <span className="text-warning-text">Chicken</span>
         </h4>
       </div>
 
       {/*  */}
-      <div className="max-w-347.5 mx-auto py-pad-2xl-plus  ">
-        <h1 className="text-48 font-n-sb ">Chicken</h1>
+      <div className="2xl:w-347.5 mx-auto px-2 md:px-0 2xl:py-pad-2xl-plus  ">
+        <h1 className="text-32 sm:text-42 2xl:text-48 font-n-sb ">Chicken</h1>
       </div>
-      <div className="max-w-347.5 mx-auto flex flex-wrap items-start justify-center gap-12 shrink-0 pb-pad-3xl ">
+      {/*  */}
+      <div className="2xl:w-347.5 mx-auto flex flex-wrap items-start justify-center xljustify-between gap-8 xl:gap-12  shrink-0 pb-pad-3xl ">
         {products.length > 0 ? (
           products.map(({ id, image, title, description, price }) => (
             <ProductCart
@@ -88,82 +82,35 @@ const Product = () => {
       </div>
       {/*  */}
 
-      <div className="relative w-full aspect-1920/270 ">
-        <img
-          src={deliveryBackGround}
-          alt=""
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute w-full h-full top-0 left-0 flex items-center justify-around ">
-          <div className="w-347.5 mx-auto flex items-center justify-between text-white-text ">
-            <div className="flex flex-col justify-center items-center">
-              <img
-                src={Meals}
-                alt=""
-                className="w-17.25 aspect-69/61 object-cover object-center "
-              />
-              <h1 className="text-24">Choose Your Meals</h1>
-              <p className="text-18 ">Lorem Ipsum is simply dummy</p>
-            </div>
-            <div className="flex flex-col justify-center items-center">
-              <img
-                src={Packaged}
-                alt=""
-                className="w-14 aspect-56/61 object-cover object-center "
-              />
-              <h1 className="text-24">Packaged fresh</h1>
-              <p className="text-18 ">Lorem Ipsum is simply dummy</p>
-            </div>
-            <div className="flex flex-col justify-center items-center">
-              <img
-                src={Shipping}
-                alt=""
-                className="w-21.75 aspect-87/59.5 object-cover object-center"
-              />
-              <h1 className="text-24">Free Shipping</h1>
-              <p className="text-18 ">Lorem Ipsum is simply dummy</p>
-            </div>
-            <div className="flex flex-col justify-center items-center">
-              <img
-                src={Repeat}
-                alt=""
-                className="w-22 aspect-88/54.5 object-cover object-center "
-              />
-              <h1 className="text-24">Cook & Repeat</h1>
-              <p className="text-18 ">Lorem Ipsum is simply dummy</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <DeliveryStep />
       {/*  */}
 
-      <div className="w-347.5 mx-auto py-pad-124 ">
-        <div className=" bg-base flex flex-col items-center text-center pt-17.75 pb-24.5 ">
+      <div className=" 2xl:w-347.5 mx-auto pt-pad-124 ">
+        <div className=" bg-base flex flex-col items-center text-center pt-17.75 pb-24.5 px-4 ">
           <img
             src={brandIcon}
             alt=""
             className="w-10.25 aspect-41/29 object-cover object-center "
           />
-          <h1 className="text-42 font-n-b">About Tazza Chicken</h1>
+          <h1 className="text-32 sm:text-42 font-n-b">About Tazza Chicken</h1>
           <p className="pt-12 pb-pad-65 text-24 ">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum
           </p>
-          <p className="w-266.75 mx-auto text-22 text-center ">
+          <p className="xl:w-266.75 mx-auto text-22 text-center ">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
             only five centuries,
           </p>
-          <p className="w-266.75 text-22 py-8.5 ">
+          <p className="xl:w-266.75 text-22 py-8.5 ">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled.
           </p>
-          <p className="w-266.75 text-22">
+          <p className="xl:w-266.75 text-22">
             It was popularised in the 1960s with the release of Letraset sheets
             containing Lorem Ipsum passages, and more recently with desktop
             publishing software like Aldus PageMaker including versions of Lorem
@@ -171,7 +118,7 @@ const Product = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-12.5 text-20 text-primary py-pad-65 ">
+        <div className="flex flex-col gap-12.5 text-20 text-primary py-pad-65 px-4 ">
           <p>
             <span className="font-n-sb text-main ">
               Chicken Curry Cut (Small){" "}
@@ -250,7 +197,7 @@ const Product = () => {
 
       {/* -- */}
 
-      <div className="w-347.5 mx-auto">
+      <div className="w-full 2xl:w-347.5  mx-auto">
         <InstagramFeed />
       </div>
 

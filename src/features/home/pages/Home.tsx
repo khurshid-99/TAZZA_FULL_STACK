@@ -7,24 +7,22 @@ import {
   iamge3,
   fruits,
   popular,
-  deliveryBackGround,
-  Meals,
-  Repeat,
-  Shipping,
-  Packaged,
-  ctaBack,
-  logo,
-  LeftArrow,
-  instagram,
-  facebook,
-  linkdin,
-  twiter,
 } from "../../../images";
 import { useState } from "react";
-import { Link } from "react-router";
+import Footer from "../../../utils/Footer";
+import DeliveryStep from "../../../utils/DeliveryStep";
+import BestSellerCart from "../components/BestSellerCart";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import FruitsVegetablesCart from "../components/FruitsVegetablesCart";
+
 const Home = () => {
-  const [email, setEmail] = useState(null);
-  const [zipCode, setZipCode] = useState(null);
+  const [email, setEmail] = useState("");
+  const [zipCode, setZipCode] = useState("");
 
   return (
     <section className="home">
@@ -84,481 +82,323 @@ const Home = () => {
           <h5>Today’s Deals</h5>
         </div>
       </div>
-      <div className="home_category_banner_container">
-        <img src={banner} alt="" />
-      </div>
-      <div className="home_del_container">
-        <div className="text">
-          <h1>
-            Delicious & <span className="text_green">Healthy Meals</span>
-            <br />
-            <span className="text_orange">Delivered</span> to Your Door
-          </h1>
+      {/*  */}
+      <div className="w-full aspect-1920/696 relative ">
+        <img
+          src={banner}
+          alt=""
+          className="w-full object-center object-cover "
+        />
+        <div className="absolute top-0 left-0 w-full h-full z-99 ">
+          <div className="max-w-[1620px] mx-auto pt-38 ">
+            <h2 className="text-30 text-white-text font-n-b uppercase ">
+              Ready to Cook
+            </h2>
+            <h1 className="text-68 text-white-text font-n-eb ">
+              Cooking made <span className="text-highlight-text ">Easy</span>
+              <span className="text-primary-light">.</span>
+            </h1>
+            <h1 className="text-48 text-white-text ">
+              Daily essentials, delivered to <br /> your doorstep.
+            </h1>
+            <div className="flex gap-3.75 pt-20 ">
+              <button className="w-63.5 aspect-254/76 rounded-[50px] bg-yellow  text-24 text-main text-center">
+                Shop Now
+              </button>
+              <button className="w-63.5 aspect-254/76 rounded-[50px]   text-24 text-[#B7B7B7] text-center border-2 border-border-dark ">
+                Shop Now
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="form_container">
-          <form action="">
+      </div>
+      {/*  */}
+      <div className="border-b border-border-light ">
+        <div className="max-w-[1620px] mx-auto flex items-center justify-between py-13.5 ">
+          <div className="">
+            <h1 className="text-32 text-main font-n-b  ">
+              Delicious &{" "}
+              <span className="text-success-text ">Healthy Meals</span>
+              <br />
+              <span className="text-orange">Delivered</span> to Your Door
+            </h1>
+          </div>
+
+          <form action="" className="flex items-center gap-11.5  ">
             <div className="form_email">
-              <input type="email" id="email_" placeholder="Email address" />
+              <input
+                id="email_"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email address"
+                className="border-b outline-none  "
+              />
             </div>
             <div className="form_zip_code">
               <input
-                type="number"
                 id="zip_code"
+                type="number"
+                value={zipCode}
+                onChange={(e) => setZipCode(e.target.value)}
                 pattern="[0-9]"
                 placeholder="Zip code"
+                className="border-b text-18 text-main outline-none "
               />
             </div>
-            <button className="submit">Get Started</button>
+            <button className="w-44.75 aspect-179/58 rounded-[50px] bg-black text-center text-white-text font-n-sb cursor-pointer ">
+              Get Started
+            </button>
           </form>
         </div>
       </div>
-      <div className="home_best_seller_category">
-        <div className="texts_container">
-          <div className="titel">
-            <div className="logo">
-              <img src={brandIcon} alt="" />
-            </div>
-            <h1>Our Best Seller</h1>
+      {/*  */}
+      <div className="max-w-[1620px] mx-auto pt-28 ">
+        <div className=" flex flex-col items-center ">
+          <div className="w-10.25 aspect-41/29 ">
+            <img
+              src={brandIcon}
+              alt=""
+              className="w-full object-center object-cover "
+            />
           </div>
-          <p className="subtitle">
+          <h1 className="text-42 text-main text-center font-n-b ">
+            Our Best Seller
+          </h1>
+          <p className="text-24 text-secondary text-center">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem <br />
             Ipsum has been the industry's standard dummy text ever.
           </p>
         </div>
-        <div className="cards_container">
-          <div className="cart">
-            <img src={iamge} alt="" />
-            <div className="cart_detils">
-              <div className="rating">⭐⭐⭐⭐⭐</div>
-              <h1 className="title">Chicken Curry Cut Small </h1>
-              <p className="subtitle">
-                Bone-in chunky pieces of skinless meat including...
-              </p>
-              <div className="weight">
-                <h5>
-                  Net wt:<span> 1000gms </span>
-                </h5>
-                <div className="v_line" />
-                <h5>
-                  Gross: <span> 1026gms</span>
-                </h5>
-              </div>
-              <div className="shop_item">
-                <div className="mrp">
-                  <h5>
-                    <span className="mrp_">MRP: </span>
-                    <small className="rs_">Rs</small>
-                    <span className="price_">309</span>
-                  </h5>
-                </div>
-                <button className="add_to_cart">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-          {/*  */}
-          <div className="cart">
-            <img src={iamge} alt="" />
-            <div className="cart_detils">
-              <div className="rating">⭐⭐⭐⭐⭐</div>
-              <h1 className="title">Chicken Curry Cut Small </h1>
-              <p className="subtitle">
-                Bone-in chunky pieces of skinless meat including...
-              </p>
-              <div className="weight">
-                <h5>
-                  Net wt:<span> 1000gms </span>
-                </h5>
-                <div className="v_line" />
-                <h5>
-                  Gross: <span> 1026gms</span>
-                </h5>
-              </div>
-              <div className="shop_item">
-                <div className="mrp">
-                  <h5>
-                    <span className="mrp_">MRP: </span>
-                    <small className="rs_">Rs</small>
-                    <span className="price_">309</span>
-                  </h5>
-                </div>
-                <button className="add_to_cart">Add to Cart</button>
-              </div>
-            </div>
-          </div>
+        {/*  */}
+        <div className=" max-w-[1390px] mx-auto pt-[75px] ">
+          <Swiper
+            navigation={true}
+            slidesPerView={1}
+            spaceBetween={10}
+            pagination={{
+              clickable: true,
+            }}
+            breakpoints={{
+              425: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2.3,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3.1,
+                spaceBetween: 20,
+              },
+              1280: {
+                slidesPerView: 3.9,
+                spaceBetween: 20,
+              },
+              1536: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[Navigation]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <BestSellerCart image={iamge} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <BestSellerCart image={iamge} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <BestSellerCart image={iamge} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <BestSellerCart image={iamge} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <BestSellerCart image={iamge} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <BestSellerCart image={iamge} />
+            </SwiperSlide>
+          </Swiper>
+
           {/*  */}
         </div>
       </div>
-      <div className="home_fruits_category">
-        <div className="texts_container">
-          <div className="titel">
-            <div className="logo">
-              <img src={brandIcon} alt="" />
+      {/*  */}
+      <div className="max-w-[1620px] mx-auto pt-28 ">
+        <div className="">
+          <div className="flex flex-col items-center ">
+            <div className="w-10.25 aspect-41/29 ">
+              <img
+                src={brandIcon}
+                alt=""
+                className="w-full object-center object-cover "
+              />
             </div>
-            <h1>Fruits & Vegetables</h1>
+            <h1 className="text-42 text-main text-center font-n-b ">
+              Fruits & Vegetables
+            </h1>
           </div>
-          <p className="subtitle">
+          <p className="text-24 text-secondary text-center ">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem <br />
             Ipsum has been the industry's standard dummy text ever.
           </p>
         </div>
-        <div className="carts_container">
-          <div className="cart">
-            <img src={fruits} alt="" />
-            <div className="cart_detils">
-              <h1 className="title">Fresh chopped vegetables</h1>
-              <h5 className="weight">
-                WT: <span>1000gms</span>
-              </h5>
-              <div className="shop_item">
-                <h5 className="mrp">
-                  <span className="mrp_">MRP:</span>
-                  <small className="rs_">Rs</small>
-                  <span className="price_">128</span>
-                </h5>
-                <button className="add_to_cart">Add to Cart</button>
-              </div>
-            </div>
-          </div>
+        <div className="max-w-[1620px] mx-auto flex justify-center pt-18.75 gap-7.5 ">
           {/*  */}
-          <div className="cart">
-            <img src={fruits} alt="" />
-            <div className="cart_detils">
-              <h1 className="title">Fresh chopped vegetables</h1>
-              <h5 className="weight">
-                WT: <span>1000gms</span>
-              </h5>
-              <div className="shop_item">
-                <h5 className="mrp">
-                  <span className="mrp_">MRP:</span>
-                  <small className="rs_">Rs</small>
-                  <span className="price_">128</span>
-                </h5>
-                <button className="add_to_cart">Add to Cart</button>
-              </div>
-            </div>
-          </div>
+          <FruitsVegetablesCart image={fruits} />
           {/*  */}
         </div>
       </div>
-      <div className="home_popular_category">
-        <div className="texts_container">
-          <div className="titel">
-            <div className="logo">
-              <img src={brandIcon} alt="" />
+      {/*  */}
+      <div className="max-w-[1620px] mx-auto pt-28 pb-41 ">
+        <div className="">
+          <div className="flex flex-col items-center ">
+            <div className="w-10.25 aspect-41/29 ">
+              <img
+                src={brandIcon}
+                alt=""
+                className="w-full object-center object-cover "
+              />
             </div>
-            <h1>Popular Categories</h1>
+            <h1 className="text-42 text-main text-center font-n-b ">
+              Popular Categories
+            </h1>
           </div>
-          <p className="subtitle">
+          <p className="text-24 text-secondary text-center ">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem <br />
             Ipsum has been the industry's standard dummy text ever.
           </p>
         </div>
-        <div className="carts_container">
-          <div className="cart">
-            <img src={popular} alt="" />
-            <div className="cart_detils">
-              <h1 className="title">Raw-Chicken-fillet</h1>
-              <h5 className="weight">
-                WT: <span>1000gms</span>
-              </h5>
-              <div className="shop_item">
-                <h5 className="mrp">
-                  <span className="mrp_">MRP:</span>
-                  <small className="rs_">Rs</small>
-                  <span className="price_">128</span>
-                </h5>
-                <button className="add_to_cart">Add to Cart</button>
-              </div>
-            </div>
-          </div>
+        <div className="flex items-center justify-center gap-7.5 pt-18.75  ">
           {/*  */}
-          <div className="cart">
-            <img src={popular} alt="" />
-            <div className="cart_detils">
-              <h1 className="title">Raw-Chicken-fillet</h1>
-              <h5 className="weight">
-                WT: <span>1000gms</span>
-              </h5>
-              <div className="shop_item">
-                <h5 className="mrp">
-                  <span className="mrp_">MRP:</span>
-                  <small className="rs_">Rs</small>
-                  <span className="price_">128</span>
-                </h5>
-                <button className="add_to_cart">Add to Cart</button>
-              </div>
-            </div>
-          </div>
+          <FruitsVegetablesCart image={popular} />
+          <FruitsVegetablesCart image={popular} />
           {/*  */}
         </div>
       </div>
-      <div className="home_delivery_step_contener">
-        <img src={deliveryBackGround} alt="" className="delivery_background" />
-        <div className="delivery_step">
-          <div className="step_1 step">
-            <img src={Meals} alt="" />
-            <h3>Choose Your Meals</h3>
-            <p>Lorem Ipsum is simply dummy</p>
-          </div>
-          <div className="step_2 step">
-            <img src={Packaged} alt="" />
-            <h3>Packaged fresh</h3>
-            <p>Lorem Ipsum is simply dummy</p>
-          </div>
-          <div className="step_3 step">
-            <img src={Shipping} alt="" />
-            <h3>Free Shipping</h3>
-            <p>Lorem Ipsum is simply dummy</p>
-          </div>
-          <div className="step_4 step">
-            <img src={Repeat} alt="" />
-            <h3>Cook & Repeat</h3>
-            <p>Lorem Ipsum is simply dummy</p>
-          </div>
-        </div>
-      </div>
-      <div className="home_explore_category">
-        <div className="texts_container">
-          <div className="titel">
-            <div className="logo">
-              <img src={brandIcon} alt="" />
+      {/*  */}
+      <DeliveryStep />
+      <div className="max-w-[1620px] mx-auto pt-36.25 ">
+        <div className="pb-18.75">
+          <div className="flex flex-col items-center ">
+            <div className="w-10.25 aspect-41/29 ">
+              <img
+                src={brandIcon}
+                alt=""
+                className="w-full object-center object-cover "
+              />
             </div>
-            <h1>Explore Categories</h1>
+            <h1 className="text-42 text-main text-center font-n-b ">
+              Explore Categories
+            </h1>
           </div>
-          <p className="subtitle">
+          <p className="text-24 text-secondary text-center ">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem <br />
             Ipsum has been the industry's standard dummy text ever.
           </p>
         </div>
-        <div className="explore_category_">
-          <div className="category_top">
-            <div className="top_category_left_container">
-              <img src={iamge3} alt="" />
-            </div>
-            <div className="top_category_right_container">
-              <div className="right_img_container_1">
-                <img src={popular} alt="" />
-              </div>
-              <div className="right_img_container_2">
-                <img src={iamge2} alt="" />
-              </div>
-            </div>
+        {/*  */}
+        <div className="max-w-[1620px] grid grid-cols-4 grid-rows-2 gap-7.5  ">
+          <div className="col-span-2 aspect-796/471 bg-[yellow] ">
+            <img
+              src={fruits}
+              alt=""
+              className="w-full aspect-796/471 object-cover object-center "
+            />
           </div>
-          <div className="category_bottom">
-            <div className="category_bottom_left_container">
-              <div className="left_img_container_1">
-                <img src={fruits} alt="" />
-              </div>
-              <div className="left_img_container_2">
-                <img src={fruits} alt="" />
-              </div>
-            </div>
-            <div className="category_bottom_right_container">
-              <img src={iamge} alt="" />
-            </div>
+          <div className="col-span-1 aspect-383/471 bg-[pink] ">
+            <img
+              src={iamge2}
+              alt=""
+              className="w-full aspect-383/471 object-cover object-center "
+            />
+          </div>
+          <div className="col-span-1 aspect-383/471 bg-[green] ">
+            <img
+              src={popular}
+              alt=""
+              className="w-full aspect-383/471 object-cover object-center "
+            />
+          </div>
+          <div className="col-span-1 aspect-383/471 bg-[blue] ">
+            <img
+              src={iamge3}
+              alt=""
+              className="w-full aspect-383/471 object-cover object-center "
+            />
+          </div>
+          <div className="col-span-1 aspect-383/471 bg-emerald-600 ">
+            <img
+              src={fruits}
+              alt=""
+              className="w-full aspect-383/471 object-cover object-center "
+            />
+          </div>
+          <div className="col-span-2 aspect-796/471 bg-violet-800 ">
+            <img
+              src={iamge}
+              alt=""
+              className="w-full aspect-796/471 object-cover object-center "
+            />
           </div>
         </div>
-        <div className="exp_cat_btn">
-          <button className="btn_explore_cat">Explore More Categories</button>
+        {/*  */}
+        <div className="flex pt-23 justify-center ">
+          <button className="w-93.5 aspect-374/76 rounded-[50px] text-24 text-main bg-yellow">
+            Explore More Categories
+          </button>
         </div>
       </div>
-      <div className="home_instagram_feed">
-        <div className="texts_container">
-          <div className="titel">
-            <div className="logo">
-              <img src={brandIcon} alt="" />
+      {/*  */}
+      <div className="max-w-[1620px] mx-auto pt-25 pb-pad-124">
+        <div className="pb-18.75">
+          <div className="flex flex-col items-center ">
+            <div className="w-10.25 aspect-41/29 ">
+              <img
+                src={brandIcon}
+                alt=""
+                className="w-full object-center object-cover "
+              />
             </div>
-            <h1>Explore Categories</h1>
+            <h1 className="text-42 text-main text-center font-n-b ">
+              Explore Categories
+            </h1>
           </div>
-          <p className="subtitle">
+          <p className="text-24 text-secondary text-center ">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's.
           </p>
         </div>
-        <div className="insagram_feed_carts">
-          <div className="cart">
-            <img src={iamge2} alt="" />
+        <div className="flex justify-center gap-7.5 ">
+          <div className="w-81.25 aspect-325/248 ">
+            <img
+              src={iamge2}
+              alt=""
+              className="w-full aspect-325/248 object-cover object-center "
+            />
           </div>
-          <div className="cart">
-            <img src={iamge2} alt="" />
-          </div>
-        </div>
-      </div>
-      <div className="home_discover_container">
-        <img src={ctaBack} alt="" />
-        <div className="dis_text_con">
-          <h5>Discover the Tazzartc</h5>
-          <h1>Tazza RTC</h1>
-          <h2>
-            Daily essentials, delivered to <br />
-            your doorstep.
-          </h2>
-          <div className="dis_text_con_btns">
-            <button className="shop_btn dis_btn">Shop Now</button>
-            <button className="discover_btn dis_btn">Discover</button>
+          <div className="w-81.25 aspect-325/248 ">
+            <img
+              src={iamge2}
+              alt=""
+              className="w-full aspect-325/248 object-cover object-center "
+            />
           </div>
         </div>
       </div>
-      <footer className="home_footer">
-        <div className="footer_content">
-          <div className="footer_left">
-            <img src={logo} alt="" />
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever...
-            </p>
-          </div>
-          <div className="footer_links_container">
-            <div className="quick_links">
-              <div className="footer_links_title">
-                <h1>Quick Link</h1>
-                <div className="linke_" />
-              </div>
-              <div className="footer_links">
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Today's Specials
-                  </Link>
-                </div>
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Chicken
-                  </Link>
-                </div>
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Fish
-                  </Link>
-                </div>
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Mutton
-                  </Link>
-                </div>
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Ready to Cook
-                  </Link>
-                </div>
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Fruits & Vegetables{" "}
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="our_products">
-              <div className="footer_links_title">
-                <h1>Our Product</h1>
-                <div className="linke_" />
-              </div>
-              <div className="footer_links">
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Chicken Curry Cut Small
-                  </Link>
-                </div>
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Lean Goat Curry Cut
-                  </Link>
-                </div>
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Chicken Drumstick
-                  </Link>
-                </div>
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Fresh chopped vegetables
-                  </Link>
-                </div>
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Fresh-Fish-slices
-                  </Link>
-                </div>
-                <div className="footer_link">
-                  <img src={LeftArrow} alt="" className="laft_arrow" />
-                  <Link to={""} className="link">
-                    Assorted-Spices-eggs
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="social_support_links">
-              <div className="social_links">
-                <div className="footer_links_title">
-                  <h1>Quick Link</h1>
-                  <div className="linke_" />
-                </div>
-                <div className="footer_links">
-                  <div className="footer_link">
-                    <Link to={""} className="link">
-                      <img src={facebook} alt="" />
-                    </Link>
-                    <Link to={""} className="link">
-                      <img src={instagram} alt="" />
-                    </Link>
-                    <Link to={""} className="link">
-                      <img src={twiter} alt="" />
-                    </Link>
-                    <Link to={""} className="link">
-                      <img src={linkdin} alt="" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              {/*  */}
-              <div className="support_links">
-                <div className="footer_links_title">
-                  <h1>Support</h1>
-                  <div className="linke_" />
-                </div>
-                <div className="footer_links">
-                  <div className="footer_link">
-                    <img src={LeftArrow} alt="" className="laft_arrow" />
-                    <Link to={""} className="link">
-                      Free Shipping
-                    </Link>
-                  </div>
-                  <div className="footer_link">
-                    <img src={LeftArrow} alt="" className="laft_arrow" />
-                    <Link to={""} className="link">
-                      Packaged fresh
-                    </Link>
-                  </div>
-                  <div className="footer_link">
-                    <img src={LeftArrow} alt="" className="laft_arrow" />
-                    <Link to={""} className="link">
-                      Give Us a Call
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="footer_copyright">
-          <p>Copyright© 2021 tazzartc.com All Right Reserved</p>
-        </div>
-      </footer>
+      <Footer />
     </section>
   );
 };

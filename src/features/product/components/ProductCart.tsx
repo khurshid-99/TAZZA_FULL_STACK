@@ -13,9 +13,9 @@ const ProductCart = ({
   return (
     <div
       id={id.toString()}
-      className="max-w-107.5 shrink-0 flex flex-col bg-[#fafafa] rounded-[5px] "
+      className="w-87.5 lg:w-107.5 shrink-0 flex flex-col bg-[#fafafa] rounded-[5px] "
     >
-      <div className="max-w-107.5 aspect-430/301 ">
+      <div className="max-w-107.5 aspect-350/301 ">
         <img
           src={img}
           alt=""
