@@ -19,93 +19,39 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import FruitsVegetablesCart from "../components/FruitsVegetablesCart";
+import CategoryNav from "../components/CategoryNav";
 
 const Home = () => {
   const [email, setEmail] = useState("");
   const [zipCode, setZipCode] = useState("");
 
   return (
-    <section className="home">
-      <div className="home_category">
-        <div className="home_category_item">
-          <div className="shape">
-            <img src="src/assets/category_inner_icon.svg" alt="" />
-          </div>
-          <h5>Today’s Deals</h5>
-        </div>
-        <div className="home_category_item">
-          <div className="shape">
-            <img src="src/assets/category_inner_icon.svg" alt="" />
-          </div>
-          <h5>Today’s Deals</h5>
-        </div>
-        <div className="home_category_item">
-          <div className="shape">
-            <img src="src/assets/category_inner_icon.svg" alt="" />
-          </div>
-          <h5>Today’s Deals</h5>
-        </div>
-        <div className="home_category_item">
-          <div className="shape">
-            <img src="src/assets/category_inner_icon.svg" alt="" />
-          </div>
-          <h5>Today’s Deals</h5>
-        </div>
-        <div className="home_category_item">
-          <div className="shape">
-            <img src="src/assets/category_inner_icon.svg" alt="" />
-          </div>
-          <h5>Today’s Deals</h5>
-        </div>
-        <div className="home_category_item">
-          <div className="shape">
-            <img src="src/assets/category_inner_icon.svg" alt="" />
-          </div>
-          <h5>Today’s Deals</h5>
-        </div>
-        <div className="home_category_item">
-          <div className="shape">
-            <img src="src/assets/category_inner_icon.svg" alt="" />
-          </div>
-          <h5>Today’s Deals</h5>
-        </div>
-        <div className="home_category_item">
-          <div className="shape">
-            <img src="src/assets/category_inner_icon.svg" alt="" />
-          </div>
-          <h5>Today’s Deals</h5>
-        </div>
-        <div className="home_category_item">
-          <div className="shape">
-            <img src="src/assets/category_inner_icon.svg" alt="" />
-          </div>
-          <h5>Today’s Deals</h5>
-        </div>
-      </div>
+    <section className="home  ">
+      {/* <CategoryNav /> */}
       {/*  */}
-      <div className="w-full aspect-400/270 xl:aspect-1920/696 relative  ">
+      <div className="w-full aspect-400/270 md:aspect-768/300 xl:aspect-1920/750 2xl:aspect-1536/696 3xl:aspect-1920/696  relative  ">
         <img
           src={banner}
           alt=""
-          className="w-full aspect-400/270 xl:aspect-1920/696 object-center object-cover "
+          className="w-full aspect-400/270 md:aspect-768/400 xl:aspect-1920/750 2xl:aspect-1536/696 3xl:aspect-1920/696   object-center object-cover "
         />
         <div className="absolute top-0 left-0 w-full h-full z-99   ">
-          <div className="3xl:max-w-[1620px] mx-auto pt-6 2xl:pt-38 ">
-            <h2 className="text-20 xl:text-30 text-white-text font-n-b uppercase ">
+          <div className="3xl:max-w-[1620px] mx-auto pt-6 md:pt-16 2xl:pt-38 ">
+            <h2 className="text-20 md:text-30 text-white-text font-n-b uppercase ">
               Ready to Cook
             </h2>
-            <h1 className="text-30 2xl:text-68 text-white-text font-n-eb ">
+            <h1 className="text-30 md:text-48 lg:text-68 text-white-text font-n-eb ">
               Cooking made <span className="text-highlight-text ">Easy</span>
               <span className="text-primary-light">.</span>
             </h1>
             <h1 className="text-26 2xl:text-48 text-white-text ">
               Daily essentials, delivered to <br /> your doorstep.
             </h1>
-            <div className="flex gap-3.75 pt-2 xl:pt-20 ">
-              <button className=" w-30 h-12 aspect-100/18 2xl:w-63.5 xl:h-19 rounded-[50px] bg-yellow text-18 xl:text-24 text-main text-center">
+            <div className="flex gap-3.75 pt-2 md:pt-10 xl:pt-20 ">
+              <button className="w-30 lg:w-45 xl:w-63.5 aspect-100/35 lg:aspect-180/60  xl:aspect-254/76 rounded-[50px] bg-yellow text-18 xl:text-24 text-main text-center shrink-0 ">
                 Shop Now
               </button>
-              <button className="w-30 h-12 xl:w-63.5 xl:h-19 rounded-[50px] text-18 xl:text-24 text-[#B7B7B7] text-center border-2 border-border-dark ">
+              <button className="w-30 lg:w-45 xl:w-63.5 aspect-100/35 lg:aspect-180/60 xl:aspect-254/76 rounded-[50px] text-18 xl:text-24 text-[#B7B7B7] text-center border-2 border-border-dark shrink-0 ">
                 Shop Now
               </button>
             </div>
@@ -114,7 +60,7 @@ const Home = () => {
       </div>
       {/*  */}
       <div className="border-b border-border-light  ">
-        <div className="w-full max-w-[1620px] mx-auto flex flex-col xl:flex-row gap-5 lg:gap-0 xl:items-center justify-between py-13.5 ">
+        <div className="w-full max-w-[1620px] mx-auto flex flex-col xl:flex-row gap-5 xl:gap-0 xl:items-center justify-between py-13.5 ">
           <div className="">
             <h1 className="text-32 text-main font-n-b  ">
               Delicious &{" "}
@@ -126,7 +72,7 @@ const Home = () => {
 
           <form
             action=""
-            className=" w-full flex flex-col xl:flex-row  xl:items-center gap-11.5 px-1 lg:px-0 "
+            className="  flex flex-col xl:flex-row  xl:items-center gap-11.5 px-1 lg:px-0 "
           >
             <div className="form_email w-full ">
               <input
@@ -135,7 +81,7 @@ const Home = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email address"
-                className="border-b outline-none w-full "
+                className="border-b outline-none w-full lg:w-75.75 "
               />
             </div>
             <div className="form_zip_code">
@@ -146,17 +92,17 @@ const Home = () => {
                 onChange={(e) => setZipCode(e.target.value)}
                 pattern="[0-9]"
                 placeholder="Zip code"
-                className="border-b text-18 text-main outline-none w-full "
+                className="border-b text-18 text-main outline-none w-full lg:w-50.5 "
               />
             </div>
-            <button className="w-44.75 aspect-179/58 rounded-[50px] bg-black text-center text-white-text font-n-sb cursor-pointer mx-auto ">
+            <button className="w-44.75 aspect-179/58 rounded-[50px] bg-black text-center text-white-text font-n-sb cursor-pointer shrink-0  ">
               Get Started
             </button>
           </form>
         </div>
       </div>
       {/*  */}
-      <div className="max-w-[1620px] mx-auto pt-28 ">
+      <div className="3xl:max-w-[1620px] mx-auto pt-28 ">
         <div className=" flex flex-col items-center ">
           <div className="w-10.25 aspect-41/29 ">
             <img
@@ -285,7 +231,7 @@ const Home = () => {
         </div>
         <div className="flex items-center justify-center gap-7.5 pt-18.75  ">
           {/*  */}
-          <FruitsVegetablesCart image={popular} />
+          {/* <FruitsVegetablesCart image={popular} /> */}
           <FruitsVegetablesCart image={popular} />
           {/*  */}
         </div>
