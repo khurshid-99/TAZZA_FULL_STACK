@@ -265,3 +265,13 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+button {
+  cursor: pointer;
+  scale: 1;
+  transition: all .2s ease ;
+}
+
+button:active {
+  scale: 99%;
+}
