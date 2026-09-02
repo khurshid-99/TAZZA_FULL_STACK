@@ -139,15 +139,15 @@ const Home = () => {
                 spaceBetween: 20,
               },
               768: {
-                slidesPerView: 2.3,
+                slidesPerView: 1.7,
                 spaceBetween: 20,
               },
               1024: {
-                slidesPerView: 3.1,
+                slidesPerView: 2.2,
                 spaceBetween: 20,
               },
               1280: {
-                slidesPerView: 3.9,
+                slidesPerView: 2.7,
                 spaceBetween: 20,
               },
               1536: {
