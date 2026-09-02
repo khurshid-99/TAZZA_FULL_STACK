@@ -2,14 +2,14 @@ import { disLike, dowArrow, like, star } from "../../../images";
 import type { ReviewCartProps } from "../types/ReviewCart.type";
 
 const ReviewCart = ({
-  item: { id, name, image, likes, dislikes, rating, date, review },
+  item: { id, name, image, likes, dislikes,  date, review },
 }: ReviewCartProps) => {
   return (
     <div id={id.toString()} className="flex items-start gap-8">
       <img
         src={image}
         alt=""
-        className="w-[40px] md:w-19.75 aspect-square rounded-[50%] object-center object-cover  "
+        className="w-10 md:w-19.75 aspect-square rounded-[50%] object-center object-cover  "
       />
       <div className=" ">
         <div className="flex items-center justify-between ">

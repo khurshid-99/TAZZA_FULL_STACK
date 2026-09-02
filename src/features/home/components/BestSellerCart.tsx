@@ -1,4 +1,8 @@
-const BestSellerCart = ({ image }) => {
+interface ICard{
+  image:string
+}
+
+const BestSellerCart = ({ image }:ICard) => {
   return (
     <div className="w-107.5 aspect-430/490 ">
       <img

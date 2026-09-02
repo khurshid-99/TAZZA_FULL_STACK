@@ -19,7 +19,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import FruitsVegetablesCart from "../components/FruitsVegetablesCart";
-import CategoryNav from "../components/CategoryNav";
+// import CategoryNav from "../components/CategoryNav";
 
 const Home = () => {
   const [email, setEmail] = useState("");

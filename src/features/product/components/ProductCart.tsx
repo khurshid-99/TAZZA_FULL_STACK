@@ -8,7 +8,7 @@ const ProductCart = ({
   netWt,
   gross,
   mrp,
-  fn,
+
 }: ProductCartProps) => {
   return (
     <div

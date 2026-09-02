@@ -1,4 +1,7 @@
-const FruitsVegetablesCart = ({ image }) => {
+interface ICard {
+  image: string;
+}
+const FruitsVegetablesCart = ({ image }: ICard) => {
   return (
     <div className=" w-81.25  flex flex-col gap-6 ">
       <img
